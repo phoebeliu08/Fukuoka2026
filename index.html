@@ -19,11 +19,6 @@
   --bg:#1d1511; --surface:#2a1e18; --fg:#f1e4d2; --muted:#b69c86; --line:#45342a;
   --accent:#e2a66a; --accent-soft:#41301f; --on-accent:#24160d; --warn:#f09a85; --warn-soft:#432b24; --gold:#d9a24a; color-scheme:dark}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
-body{-webkit-font-smoothing:antialiased;touch-action:manipulation}
-.page{padding-top:6px;padding-bottom:28px}
-.page+.page{border-top:1px solid var(--line);padding-top:26px}
-.page:last-child{min-height:60vh}
 body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.6;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
 .wrap{max-width:720px;margin:0 auto}
@@ -114,19 +109,43 @@ ol{list-style:none;margin:0;padding:0}
 .ref{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:4px 16px;margin-bottom:16px}
 .ref h3{font-family:var(--f-display);font-size:1.05rem;margin:14px 0 4px}
 .ref .row{grid-template-columns:1fr}
-@media (max-width:420px){.row{grid-template-columns:62px 1fr;gap:0 10px}h1{font-size:1.7rem}}
+@media (max-width:420px){.row{grid-template-columns:62px 1fr;gap:0 10px}}
 @media (prefers-reduced-motion:no-preference){.chip{transition:background .15s}}
+
+/* app shell: fixed top bar + scrolling page + fixed bottom day bar, fits the phone screen */
+html,body{height:100%;overflow:hidden;overscroll-behavior:none;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+body{margin:0;padding:0;-webkit-font-smoothing:antialiased;touch-action:manipulation}
+.wrap{display:flex;flex-direction:column;height:100vh;height:100dvh;max-width:720px;margin:0 auto;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px);background:var(--bg)}
+header{flex:none;padding:10px 16px 0}
+header::after{display:none}
+h1{font-size:1.2rem}
+nav{position:static;flex:none;padding:8px 16px 8px;margin:0;border-bottom:1px solid var(--line)}
+main{flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:16px 16px 20px}
+.bar{flex:none;display:flex;align-items:center;gap:8px;padding:8px 16px calc(8px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:var(--bg)}
+.bar span{flex:1;text-align:center;font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
+.bar button{font:inherit;min-height:44px;min-width:96px;padding:8px 14px;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:10px;cursor:pointer}
+.bar button:disabled{opacity:.35;cursor:default}
+body::before{display:none}
+
+.scroller{flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+header{flex:none;padding:18px 16px 4px}
+header::after{display:block}
+h1{font-size:1.7rem}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 16px;margin:0 0 14px}
+main{flex:none;overflow:visible;padding:0 16px 20px}
+@media (max-width:420px){h1{font-size:1.6rem}}
 </style>
 
 <div class="wrap">
-<header>
+<div class="scroller" id="scroller"><header>
   <h1>九州行程</h1>
   <p class="sub">2026.11.02 – 11.08 · 由布院 · 福岡 · 糸島 · 小倉</p>
   <div class="facts"><span>日出 <b>6:30</b></span><span>日落 <b>17:30</b></span><span>氣溫 <b>10–20°C</b></span><span>降雨少，有機會看到紅葉</span></div>
   <div class="facts"><span>機票 <b>$16,063／人</b></span><span>去程 <b>虎航 IT240</b></span><span>回程 <b>長榮 BR101</b></span></div>
 </header>
 <nav><div class="chips" id="chips" role="tablist" aria-label="選擇日期"></div></nav>
-<main id="main"></main>
+<main id="main"></main></div>
+<div class="bar" id="bar"><button id="prev" type="button">‹ 上一天</button><span id="barlab"></span><button id="next" type="button">下一天 ›</button></div>
 </div>
 
 <div id="lb" hidden><button type="button" aria-label="關閉">關閉</button><img alt=""></div>
@@ -297,7 +316,7 @@ const chips=document.getElementById('chips'), main=document.getElementById('main
 const tabs=[...DAYS.map((x,i)=>({id:'d'+(i+1),top:x.d,bot:'週'+x.w})),{id:'cost',top:'費用',bot:'總表'},{id:'ref',top:'參考',bot:'清單'},{id:'coupon',top:'優惠券',bot:'折價'}];
 chips.innerHTML=tabs.map((t,i)=>`<button class="chip" role="tab" data-i="${i}" aria-selected="false"><b>${esc(t.top)}</b><small>${esc(t.bot)}</small></button>`).join('');
 
-const shots=a=>a?`<div class="shots">${a.map(([f,c])=>`<figure class="shot"><img src="${U('img/'+f+'.jpg')}" alt="${esc(c)}"><figcaption>${esc(c)}</figcaption></figure>`).join('')}</div>`:'';
+const shots=a=>a?`<div class="shots">${a.map(([f,c])=>`<figure class="shot"><img src="${U('img/'+f+'.jpg')}" alt="${esc(c)}" loading="lazy"><figcaption>${esc(c)}</figcaption></figure>`).join('')}</div>`:'';
 let CHK={};try{CHK=JSON.parse(localStorage.getItem('kyushu-chk')||'{}')||{}}catch(e){}
 main.addEventListener('change',ev=>{const c=ev.target.closest('input[data-ck]');if(!c)return;CHK[c.dataset.ck]=c.checked;c.closest('label').classList.toggle('done',c.checked);try{localStorage.setItem('kyushu-chk',JSON.stringify(CHK))}catch(e){}});
 function row(it){
@@ -307,11 +326,12 @@ function row(it){
   const links=ls&&ls.length?`<div class="links">${ls.map(([a,b])=>link(a,b)).join('')}</div>`:'';
   return `<li class="row"><div class="time">${esc(it.t||'')}</div><div class="body"><div class="title"><span class="kind k-${esc(it.k)}">${esc(it.k)}</span><span>${nl?link(it.n,nl):esc(it.n)}</span></div>${det}${it.c?`<span class="cost">${esc(it.c)}</span>`:''}${links}${shots(it.img)}</div></li>`;
 }
-function pageHtml(i){
+function show(i,scroll){
+  [...chips.children].forEach((c,j)=>c.setAttribute('aria-selected',j===i));
   let h='';
   if(i<DAYS.length){
     const d=DAYS[i];
-    h=`<div class="dayhead"><div class="date">DAY ${i+1} · ${esc(d.d)}（週${esc(d.w)}）</div><h2>${esc(d.title)}</h2>${d.stay?`<span class="stay">住宿：${esc(d.stay)}</span>`:''}</div><section class="exp" data-day="${i}" aria-label="本日費用"></section>${d.tips?`<div class="tips"><b>${esc(d.tips[0])}</b>　${esc(d.tips[1])}${shots(d.tips[2])}</div>`:''}<ol>${d.items.map(row).join('')}</ol>`;
+    h=`<div class="dayhead"><div class="date">DAY ${i+1} · ${esc(d.d)}（週${esc(d.w)}）</div><h2>${esc(d.title)}</h2>${d.stay?`<span class="stay">住宿：${esc(d.stay)}</span>`:''}</div><section class="exp" id="exp" aria-label="本日費用"></section>${d.tips?`<div class="tips"><b>${esc(d.tips[0])}</b>　${esc(d.tips[1])}${shots(d.tips[2])}</div>`:''}<ol>${d.items.map(row).join('')}</ol>`;
   }else if(tabs[i].id==='cost'){
     h=`<div class="dayhead"><h2>費用總表</h2></div><section class="ref" id="expsum"></section>`;
   }else if(tabs[i].id==='ref'){
@@ -331,43 +351,27 @@ function pageHtml(i){
      ['福岡機場免稅店','https://gogojp.tw/fukuoka-airport/','使用期限至 2027 年 3 月 31 日','img/logo-fukuokaairport.jpg']];
     h=`<div class="dayhead"><h2>商店優惠券</h2></div>`+C.map(c=>`<section class="ref"><a class="brand" href="${esc(c[1])}" target="_blank" rel="noopener">${c[3]?`<img src="${U(c[3])}" alt="${esc(c[0])}">`:`<b class="mono">${esc(c[0])}</b>`}<span>${esc(c[0])}<small>${esc(c[2])}</small></span></a></section>`).join('');
   }
-  return h;
-}
-let NAVH=60,spyLock=0,userMoved=false;
-function buildAll(){
-  main.innerHTML=tabs.map((t,i)=>`<section class="page" id="p-${t.id}" data-i="${i}">${pageHtml(i)}</section>`).join('');
-  refresh();
-}
-function setActive(i){
-  if(setActive.i===i)return;setActive.i=i;
-  [...chips.children].forEach((c,j)=>c.setAttribute('aria-selected',j===i));
-  try{chips.children[i].scrollIntoView({inline:'center',block:'nearest'})}catch(e){}
+  main.innerHTML=h;
+  cur=i;editing=null;pendingDel=null;refresh();
+  document.getElementById('prev').disabled=i===0;document.getElementById('next').disabled=i===tabs.length-1;
+  document.getElementById('barlab').textContent=i<DAYS.length?'DAY '+(i+1)+' · '+DAYS[i].d:tabs[i].top;
+  chips.children[i].scrollIntoView({inline:'center',block:'nearest'});
+  document.getElementById('scroller').scrollTop=0;
   try{history.replaceState(null,'','#'+tabs[i].id)}catch(e){}
   try{localStorage.setItem('kyushu-tab',tabs[i].id)}catch(e){}
 }
-function go(i,smooth){
-  const el=main.children[i];if(!el)return;
-  NAVH=document.querySelector('nav').offsetHeight;
-  const top=el.getBoundingClientRect().top+window.scrollY-NAVH-(parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--sat'))||0)-4;
-  spyLock=Date.now()+(smooth===false?200:700);
-  window.scrollTo({top:Math.max(0,top),behavior:smooth===false?'auto':'smooth'});
-  setActive(i);
-}
-function spy(){
-  if(Date.now()<spyLock)return;
-  const line=document.querySelector('nav').getBoundingClientRect().bottom+24;
-  let idx=0;[...main.children].forEach((el,j)=>{if(el.getBoundingClientRect().top<=line)idx=j});
-  if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4)idx=main.children.length-1;
-  setActive(idx);
-}
-let spyT=0;
-window.addEventListener('scroll',()=>{userMoved=true;if(spyT)return;spyT=requestAnimationFrame(()=>{spyT=0;spy()})},{passive:true});
-
+function go(i){if(i<0||i>=tabs.length)return;show(i,true)}
+document.getElementById('prev').addEventListener('click',()=>go(cur-1));
+document.getElementById('next').addEventListener('click',()=>go(cur+1));
+(()=>{let x=0,y=0,t=0,ok=false;
+ main.addEventListener('touchstart',e=>{const q=e.touches[0];x=q.clientX;y=q.clientY;t=Date.now();ok=e.touches.length===1&&!e.target.closest('.sumwrap,input,select,textarea')},{passive:true});
+ main.addEventListener('touchend',e=>{if(!ok)return;const q=e.changedTouches[0],dx=q.clientX-x,dy=q.clientY-y;if(Math.abs(dx)>70&&Math.abs(dy)<45&&Math.abs(dx)>Math.abs(dy)*2&&Date.now()-t<600)go(cur+(dx<0?1:-1))},{passive:true});
+})();
 const lb=document.getElementById('lb'),lbi=lb.querySelector('img');
 main.addEventListener('click',e=>{const im=e.target.closest('.shot img');if(im){lbi.src=im.src;lbi.alt=im.alt;lb.hidden=false}});
 lb.addEventListener('click',()=>{lb.hidden=true});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.hidden=true});
-chips.addEventListener('click',e=>{const b=e.target.closest('.chip');if(b)go(+b.dataset.i,true)});
+chips.addEventListener('click',e=>{const b=e.target.closest('.chip');if(b)go(+b.dataset.i)});
 let start=0;
 try{
   const now=new Date(), ds=['2026-11-02','2026-11-03','2026-11-04','2026-11-05','2026-11-06','2026-11-07','2026-11-08'];
@@ -413,9 +417,9 @@ function persist(k){
   });
 }
 const chain={};
-function refreshSync(){main.querySelectorAll('.exp-sync').forEach(el=>{el.textContent=syncMsg})}
+function refreshSync(){const el=document.getElementById('exp-sync');if(el)el.textContent=syncMsg}
 function renderExp(i){
-  const box=main.querySelector('.exp[data-day="'+i+'"]');if(!box)return;const isEd=editing!==null&&i===cur;
+  const box=document.getElementById('exp');if(!box)return;
   const list=EXP[dk(i)]||[];
   const rows=list.map(e=>{
     const amt=e.cur==='JPY'?'¥'+fmt(e.amt):'NT$'+fmt(e.amt);
@@ -424,7 +428,7 @@ function renderExp(i){
     return `<li class="exp-row"><div class="exp-main"><div class="exp-label">${esc(e.label)}</div>${e.note?`<div class="exp-note">${esc(e.note)}</div>`:''}</div><div class="exp-amt">${amt}${eq}</div>${act}</li>`;
   }).join('');
   let form='';
-  if(isEd){
+  if(editing!==null){
     const e=editing==='new'?{label:'',cur:'JPY',amt:'',twd:'',note:''}:list.find(x=>x.id===editing)||{label:'',cur:'JPY',amt:'',twd:'',note:''};
     form=`<form class="exp-form" id="exp-form" novalidate>
       <label class="wide">項目<input id="exp-label" value="${esc(e.label)}" autocomplete="off"></label>
@@ -435,9 +439,9 @@ function renderExp(i){
       <div class="exp-err" id="exp-err" hidden></div>
       <div class="btns"><button type="button" data-act="cancel">取消</button><button type="submit" class="primary">儲存</button></div></form>`;
   }
-  const add=canWrite&&!isEd?`<button type="button" class="primary exp-add" data-act="add">＋ 新增費用</button>`:'';
-  box.innerHTML=`<div class="exp-head"><h3>本日費用</h3><div class="exp-tot">${totHtml(totals(list))}</div></div>${rows?`<ul class="exp-list">${rows}</ul>`:''}${form}${add}<div class="exp-sync">${esc(syncMsg||(canWrite?'':'唯讀'))}</div>`;
-  if(isEd){const f=document.getElementById('exp-label');if(f&&editing==='new')f.focus()}
+  const add=canWrite&&editing===null?`<button type="button" class="primary exp-add" data-act="add">＋ 新增費用</button>`:'';
+  box.innerHTML=`<div class="exp-head"><h3>本日費用</h3><div class="exp-tot">${totHtml(totals(list))}</div></div>${rows?`<ul class="exp-list">${rows}</ul>`:''}${form}${add}<div class="exp-sync" id="exp-sync">${esc(syncMsg||(canWrite?'':'唯讀'))}</div>`;
+  if(editing!==null){const f=document.getElementById('exp-label');if(f&&editing==='new')f.focus()}
 }
 function renderSum(){
   const box=document.getElementById('expsum');if(!box)return;
@@ -446,9 +450,9 @@ function renderSum(){
     return `<tr><td>${esc(d.d)}（週${esc(d.w)}）</td><td>${t.jpy?'¥'+fmt(t.jpy):'–'}</td><td>${t.twd?'NT$'+fmt(t.twd):'–'}</td><td>${t.eq?'NT$'+fmt(t.eq):'–'}</td></tr>`}).join('');
   box.innerHTML=`<h3>費用總表</h3><div class="sumwrap"><table class="sum"><thead><tr><th>日期</th><th>日幣</th><th>台幣</th><th>日幣已填折合</th></tr></thead><tbody>${rows}</tbody><tfoot><tr><td>全程</td><td>¥${fmt(all.jpy)}</td><td>NT$${fmt(all.twd)}</td><td>NT$${fmt(all.eq)}</td></tr></tfoot></table></div><p class="detail" style="margin:6px 0 10px">各天費用在該天行程最上方編輯。</p>`+DAYS.map((d,i)=>{const L=EXP[dk(i)]||[],t=totals(L);const tt=(t.jpy?'¥'+fmt(t.jpy):'')+(t.jpy&&t.twd?' + ':'')+(t.twd?'NT$'+fmt(t.twd):'');return `<div class="csec"><h4><span>${esc(d.d)}（週${esc(d.w)}）</span><span>${tt||'–'}</span></h4>${L.length?L.map(e=>`<div class="cl"><span>${esc(e.label)}${e.note?`<small>${esc(e.note)}</small>`:''}</span><em>${e.cur==='JPY'?'¥'+fmt(e.amt)+(e.twd!=null?` ≈ NT$${fmt(e.twd)}`:''):'NT$'+fmt(e.amt)}</em></div>`).join(''):'<div class="cl"><span>無費用</span></div>'}</div>`}).join('');
 }
-function refresh(){DAYS.forEach((_,i)=>renderExp(i));renderSum()}
+function refresh(){if(cur<DAYS.length)renderExp(cur);else renderSum()}
 main.addEventListener('click',ev=>{
-  const b=ev.target.closest('[data-act]');const ex=b&&b.closest('.exp[data-day]');if(!ex)return;const day=+ex.dataset.day;if(day!==cur){const p=cur;editing=null;pendingDel=null;cur=day;renderExp(p)}
+  const b=ev.target.closest('[data-act]');if(!b||!document.getElementById('exp'))return;
   const a=b.dataset.act,k=dk(cur);
   if(a==='add'){editing='new';pendingDel=null;renderExp(cur)}
   else if(a==='edit'){editing=b.dataset.id;pendingDel=null;renderExp(cur)}
@@ -484,6 +488,5 @@ main.addEventListener('submit',ev=>{
     if(editing===null&&pendingDel===null)refresh();
   },()=>{});
 }catch(e){}})();
-buildAll();go(start,false);
-window.addEventListener('load',()=>{if(!userMoved)go(start,false)});
+show(start,false);
 </script>
