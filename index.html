@@ -19,51 +19,51 @@
   --bg:#1d1511; --surface:#2a1e18; --fg:#f1e4d2; --muted:#b69c86; --line:#45342a;
   --accent:#e2a66a; --accent-soft:#41301f; --on-accent:#24160d; --warn:#f09a85; --warn-soft:#432b24; --gold:#d9a24a; color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.6;
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.6;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
 .wrap{max-width:720px;margin:0 auto}
 header{padding:28px 0 16px;position:relative}
 header::after{content:"";display:block;height:4px;margin-top:16px;border-radius:2px;background:linear-gradient(90deg,var(--warn),var(--gold) 55%,var(--accent))}
 h1{font-family:var(--f-display);font-weight:900;font-size:2rem;line-height:1.15;margin:0;text-wrap:balance}
-.sub{color:var(--muted);margin:6px 0 0;font-family:var(--f-mono);font-size:.8rem;letter-spacing:.04em}
-.facts{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;font-size:.85rem;color:var(--muted)}
+.sub{color:var(--muted);margin:6px 0 0;font-family:var(--f-mono);font-size:.88rem;letter-spacing:.04em}
+.facts{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;font-size:.9rem;color:var(--muted)}
 .facts b{color:var(--fg);font-weight:500}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
 nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line);margin-bottom:20px}
 .chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
 .chips::-webkit-scrollbar{display:none}
 .chip{flex:0 0 auto;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:8px;padding:6px 10px;min-width:56px;text-align:center;font:inherit;cursor:pointer;line-height:1.25}
-.chip small{display:block;color:var(--muted);font-size:.7rem}
-.chip b{font-family:var(--f-mono);font-weight:500;font-size:.9rem}
+.chip small{display:block;color:var(--muted);font-size:.78rem}
+.chip b{font-family:var(--f-mono);font-weight:500;font-size:.95rem}
 .chip[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 .chip[aria-selected="true"] small{color:inherit;opacity:.85}
 .chip:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .dayhead{margin-bottom:18px}
 .dayhead h2{font-family:var(--f-display);font-size:1.45rem;margin:0;line-height:1.3;text-wrap:balance}
-.dayhead .date{font-family:var(--f-mono);font-size:.8rem;color:var(--accent);letter-spacing:.06em}
-.stay{display:inline-block;margin-top:8px;font-size:.85rem;background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:6px}
-.tips{margin:0 0 20px;padding:10px 14px;background:var(--surface);border:1px solid var(--line);border-radius:8px;font-size:.85rem;color:var(--muted)}
+.dayhead .date{font-family:var(--f-mono);font-size:.88rem;color:var(--accent);letter-spacing:.06em}
+.stay{display:inline-block;margin-top:8px;font-size:.9rem;background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:6px}
+.tips{margin:0 0 20px;padding:10px 14px;background:var(--surface);border:1px solid var(--line);border-radius:8px;font-size:.9rem;color:var(--muted)}
 .tips b{color:var(--fg);font-weight:500}
 ol{list-style:none;margin:0;padding:0}
 .row{display:grid;grid-template-columns:76px 1fr;gap:0 12px;padding:12px 0;border-top:1px solid var(--line)}
 .row:first-child{border-top:0}
-.time{font-family:var(--f-mono);font-size:.78rem;color:var(--muted);padding-top:3px;line-height:1.4;overflow-wrap:anywhere}
+.time{font-family:var(--f-mono);font-size:.85rem;color:var(--muted);padding-top:3px;line-height:1.4;overflow-wrap:anywhere}
 .body{min-width:0}
 .title{font-weight:700;display:flex;flex-wrap:wrap;gap:6px;align-items:baseline}
-.kind{font-size:.7rem;font-weight:500;letter-spacing:.06em;padding:1px 7px;border-radius:4px;background:var(--accent-soft);color:var(--accent)}
+.kind{font-size:.78rem;font-weight:500;letter-spacing:.06em;padding:1px 7px;border-radius:4px;background:var(--accent-soft);color:var(--accent)}
 .kind.k-飯,.kind.k-車{background:var(--warn-soft);color:var(--warn)}
 .kind.k-吃{background:var(--warn-soft);color:var(--warn)}
 .title a{color:var(--accent);text-underline-offset:3px}
-.detail{color:var(--muted);font-size:.88rem;margin-top:3px;white-space:pre-line;overflow-wrap:anywhere}
-.cost{display:inline-block;margin-top:6px;font-family:var(--f-mono);font-size:.78rem;color:var(--fg);background:var(--accent-soft);padding:1px 8px;border-radius:4px}
+.detail{color:var(--muted);font-size:.92rem;margin-top:3px;white-space:pre-line;overflow-wrap:anywhere}
+.cost{display:inline-block;margin-top:6px;font-family:var(--f-mono);font-size:.85rem;color:var(--fg);background:var(--accent-soft);padding:1px 8px;border-radius:4px}
 .links{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.links a{font-size:.8rem;color:var(--accent);text-decoration:none;border:1px solid var(--accent);border-radius:6px;padding:2px 10px}
+.links a{font-size:.88rem;color:var(--accent);text-decoration:none;border:1px solid var(--accent);border-radius:6px;padding:2px 10px}
 .links a:hover{background:var(--accent-soft)}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink,inherit);margin-top:6px}.brand img{width:140px;height:40px;object-fit:contain;border-radius:8px;border:1px solid var(--line);background:#fff}.brand span{font-weight:700}.brand small{display:block;font-weight:400;font-size:.78rem;color:var(--muted);margin-top:2px}.brand .mono{display:grid;place-items:center;text-align:center;width:140px;height:40px;padding:0;box-sizing:border-box;border-radius:8px;font-size:1rem;line-height:1.2;background:var(--accent,#8a5a3b);color:#fff;font-size:1.4rem}.chk{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:.95rem;cursor:pointer}.chk input{width:22px;height:22px;accent-color:var(--accent,#8a5a3b);flex:none}.chk.done span{text-decoration:line-through;opacity:.55}.csec{margin-top:18px}.csec h4{display:flex;justify-content:space-between;margin:0 0 4px;font-size:.95rem}.cl{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-top:1px solid var(--line);font-size:.88rem}.cl em{font-style:normal;font-family:var(--f-mono);white-space:nowrap}.cl small{display:block;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink,inherit);margin-top:6px}.brand img{width:140px;height:40px;object-fit:contain;border-radius:8px;border:1px solid var(--line);background:#fff}.brand span{font-weight:700}.brand small{display:block;font-weight:400;font-size:.85rem;color:var(--muted);margin-top:2px}.brand .mono{display:grid;place-items:center;text-align:center;width:140px;height:40px;padding:0;box-sizing:border-box;border-radius:8px;font-size:1rem;line-height:1.2;background:var(--accent,#8a5a3b);color:#fff;font-size:1.4rem}.chk{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:1rem;cursor:pointer}.chk input{width:22px;height:22px;accent-color:var(--accent,#8a5a3b);flex:none}.chk.done span{text-decoration:line-through;opacity:.55}.csec{margin-top:18px}.csec h4{display:flex;justify-content:space-between;margin:0 0 4px;font-size:1rem}.cl{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-top:1px solid var(--line);font-size:.92rem}.cl em{font-style:normal;font-family:var(--f-mono);white-space:nowrap}.cl small{display:block;color:var(--muted)}
 .shots{display:grid;gap:10px;margin-top:10px}
 .shot{margin:0;max-width:420px}
 .shot img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--line);background:#fff;cursor:zoom-in}
-.shot figcaption{font-size:.78rem;color:var(--muted);margin-top:4px}
+.shot figcaption{font-size:.85rem;color:var(--muted);margin-top:4px}
 .tips .shot{margin-top:10px}
 #lb{position:fixed;inset:0;z-index:20;background:rgba(20,12,8,.88);display:flex;align-items:center;justify-content:center;
   padding:calc(16px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));cursor:zoom-out}
@@ -73,33 +73,33 @@ ol{list-style:none;margin:0;padding:0}
 .exp{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 20px}
 .exp-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 14px}
 .exp-head h3{font-family:var(--f-display);font-size:1.05rem;margin:0}
-.exp-tot{display:flex;flex-wrap:wrap;gap:2px 14px;font-size:.85rem;color:var(--muted)}
+.exp-tot{display:flex;flex-wrap:wrap;gap:2px 14px;font-size:.9rem;color:var(--muted)}
 .exp-tot b{color:var(--fg);font-family:var(--f-mono);font-weight:500;font-variant-numeric:tabular-nums}
 .exp-tot .none{font-style:normal}
 .exp-list{margin:8px 0 0;padding:0;list-style:none}
 .exp-row{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:9px 0;border-top:1px solid var(--line)}
 .exp-main{min-width:0}
 .exp-label{font-weight:500;overflow-wrap:anywhere}
-.exp-note{font-size:.78rem;color:var(--muted);overflow-wrap:anywhere}
+.exp-note{font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
 .exp-amt{font-family:var(--f-mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
-.exp-amt small{display:block;color:var(--muted);font-size:.72rem}
+.exp-amt small{display:block;color:var(--muted);font-size:.8rem}
 .exp-act{grid-column:1/-1;display:flex;gap:6px;justify-content:flex-end}
-.exp button,.exp-form button{font:inherit;font-size:.8rem;border:1px solid var(--line);background:transparent;color:var(--fg);border-radius:6px;padding:3px 10px;cursor:pointer}
+.exp button,.exp-form button{font:inherit;font-size:.88rem;border:1px solid var(--line);background:transparent;color:var(--fg);border-radius:6px;padding:3px 10px;cursor:pointer}
 .exp button.primary,.exp-form button.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 .exp button.danger{color:var(--warn);border-color:var(--warn)}
 .exp-add{margin-top:10px}
 .exp-form{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
-.exp-form label{display:flex;flex-direction:column;gap:2px;font-size:.78rem;color:var(--muted);min-width:0}
+.exp-form label{display:flex;flex-direction:column;gap:2px;font-size:.85rem;color:var(--muted);min-width:0}
 .exp-form .wide{grid-column:1/-1}
-.exp-form input,.exp-form select{font:inherit;font-size:.9rem;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:6px 8px;min-width:0;width:100%}
+.exp-form input,.exp-form select{font:inherit;font-size:.95rem;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:6px 8px;min-width:0;width:100%}
 .exp-form .btns{grid-column:1/-1;display:flex;gap:8px;justify-content:flex-end}
-.exp-err{grid-column:1/-1;color:var(--warn);font-size:.8rem}
-.exp-sync{margin-top:8px;font-size:.75rem;color:var(--muted)}
+.exp-err{grid-column:1/-1;color:var(--warn);font-size:.88rem}
+.exp-sync{margin-top:8px;font-size:.82rem;color:var(--muted)}
 .sumwrap{overflow-x:auto}
-.sum{width:100%;border-collapse:collapse;font-size:.88rem}
+.sum{width:100%;border-collapse:collapse;font-size:.92rem}
 .sum th,.sum td{padding:7px 8px;text-align:right;border-top:1px solid var(--line);white-space:nowrap}
 .sum th:first-child,.sum td:first-child{text-align:left}
-.sum thead th{border-top:0;color:var(--muted);font-weight:500;font-size:.78rem}
+.sum thead th{border-top:0;color:var(--muted);font-weight:500;font-size:.85rem}
 .sum td{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
 .sum td:first-child{font-family:var(--f-body)}
 .sum tfoot td{font-weight:700}
@@ -122,7 +122,7 @@ h1{font-size:1.2rem}
 nav{position:static;flex:none;padding:8px 16px 8px;margin:0;border-bottom:1px solid var(--line)}
 main{flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:16px 16px 20px}
 .bar{flex:none;display:flex;align-items:center;gap:8px;padding:8px 16px calc(8px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:var(--bg)}
-.bar span{flex:1;text-align:center;font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
+.bar span{flex:1;text-align:center;font-family:var(--f-mono);font-size:.88rem;color:var(--muted)}
 .bar button{font:inherit;min-height:44px;min-width:96px;padding:8px 14px;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:10px;cursor:pointer}
 .bar button:disabled{opacity:.35;cursor:default}
 body::before{display:none}
@@ -134,6 +134,83 @@ h1{font-size:1.7rem}
 nav{position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 16px;margin:0 0 14px}
 main{flex:none;overflow:visible;padding:0 16px 20px}
 @media (max-width:420px){h1{font-size:1.6rem}}
+
+/* single page scroll (document scroll), fixed bottom day bar, phone-sized text */
+html,body{height:auto;overflow:visible;overscroll-behavior:auto}
+.wrap{display:block;height:auto;min-height:100vh;padding-bottom:calc(132px + env(safe-area-inset-bottom,0px))}
+.scroller{overflow:visible;height:auto;flex:none}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+main{padding:0 16px 24px}
+.dock{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:100%;max-width:720px;z-index:6;background:var(--bg);border-top:1px solid var(--line)}
+.bar{position:static;border-top:0;padding:6px 16px 4px}
+.bar button{min-height:40px}
+.bar[hidden],nav[hidden],header[hidden]{display:none}
+.tabbar{display:flex;padding-bottom:env(safe-area-inset-bottom,0px);border-top:1px solid var(--line)}
+.tabbar button{flex:1;position:relative;display:flex;flex-direction:column;align-items:center;gap:1px;padding:7px 2px 6px;border:0;background:transparent;color:var(--muted);font:inherit;font-size:.78rem;cursor:pointer}
+.tabbar button i{font-style:normal;font-size:1.35rem;line-height:1.2}
+.tabbar button.on{color:var(--accent);font-weight:700}
+.tabbar button.on::before{content:"";position:absolute;top:-1px;left:12%;right:12%;height:3px;border-radius:0 0 3px 3px;background:var(--accent)}
+.exp-form input,.exp-form select{font-size:16px}
+.chip b{font-size:1rem}
+.bagcols{column-count:2;column-gap:10px}
+.bagcols .ref{break-inside:avoid;margin-bottom:10px;padding:2px 10px 6px}
+.bagcols .ref h3{font-size:.98rem;margin:10px 0 2px}
+.bagcols .chk{gap:8px;padding:7px 0;font-size:.9rem;line-height:1.35;align-items:flex-start}
+.bagcols .chk input{width:22px;height:22px;margin-top:1px}
+.bagcols .chk input::after{font-size:.8rem}
+.bagtop{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.resetbtn{flex:none;font:inherit;font-size:.9rem;padding:7px 14px;border:1px solid var(--line);background:var(--surface);color:var(--warn);border-radius:999px;cursor:pointer}
+.chk input{-webkit-appearance:none;appearance:none;width:26px;height:26px;border:2px solid var(--accent);border-radius:50%;background:transparent;display:grid;place-items:center;margin:0;flex:none;cursor:pointer}
+.chk input::after{content:"✓";color:var(--on-accent);font-size:.95rem;line-height:1;transform:scale(0);transition:transform .12s}
+.chk input:checked{background:var(--accent)}
+.chk input:checked::after{transform:scale(1)}
+.plan{list-style:none;margin:6px 0 10px;padding:0}
+.plan li{display:grid;grid-template-columns:78px 1fr;gap:8px;padding:6px 0;border-top:1px solid var(--line);font-size:.95rem}
+.plan li:first-child{border-top:0}
+.plan .pt{font-family:var(--f-mono);font-size:.82rem;color:var(--muted);padding-top:2px;overflow-wrap:anywhere}
+.ref h3 a{color:inherit;text-decoration:none}
+.plan a{color:var(--accent);text-underline-offset:3px}
+
+.chkgrid{display:grid;grid-template-columns:1fr 1fr;column-gap:10px}
+.chkgrid .chk{font-size:.95rem}
+.tot{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:14px}
+.tot>small{color:var(--muted)}
+.tot-main{font-family:var(--f-display);font-weight:900;font-size:2rem;line-height:1.2;color:var(--accent)}
+.tot-line{font-size:.92rem;margin-top:2px}
+.tot-chips{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.tchip{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;display:flex;flex-direction:column;min-width:0}
+.tchip small{color:var(--muted);font-size:.78rem}.tchip b{font-family:var(--f-mono);font-size:.88rem;font-weight:500;overflow-wrap:anywhere}
+.tot-rate{margin-top:8px;font-size:.8rem;color:var(--muted)}
+.mtags{display:flex;gap:6px;flex-wrap:wrap;margin-top:3px}
+.mtag{font-size:.78rem;padding:1px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.expbox{padding:12px 16px}
+.exp-form label.chk{flex-direction:row;align-items:center;color:var(--fg);font-size:.95rem}
+.exp-form select{min-height:40px}
+.subtabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:0 0 12px;padding-bottom:2px}
+.subtabs::-webkit-scrollbar{display:none}
+.daytot{margin:8px 0 4px;font-size:.95rem;color:var(--muted)}
+.daytot b{color:var(--accent);font-family:var(--f-mono);font-weight:500}
+.exp-row.editing{display:block;border-top:1px solid var(--line)}
+.exp-row.editing .exp-form{margin-top:0;border-top:0}
+.exp-form input:not([type=checkbox]){min-height:40px}
+.exp-form input[type=date]{-webkit-appearance:none;appearance:none;display:block;text-align:left}
+.exp-form .chk input{width:26px;height:26px;min-height:0;padding:0;flex:none}
+
+.exp-form [hidden]{display:none!important}
+.bgsec{padding:2px 12px 8px;margin-bottom:10px}
+.bgsec.todo .bgitems{column-count:2;column-gap:12px}
+.bgsec.todo.editing .bgitems{column-count:1}
+.bgsec .chk{gap:8px;padding:7px 0;font-size:.92rem;line-height:1.35;align-items:flex-start;break-inside:avoid}
+.bgsec .chk input{width:22px;height:22px;margin-top:1px}
+.bgsec .chk input::after{font-size:.8rem}
+.bghead{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.bghead h3{margin:10px 0 2px;min-width:0;flex:1}
+.bgbtn{flex:none;font:inherit;font-size:.82rem;padding:3px 10px;border:1px solid var(--line);background:var(--bg);color:var(--accent);border-radius:999px;cursor:pointer}
+.bgrow{display:flex;gap:6px;margin:6px 0}
+.bgin{flex:1;min-width:0;font:inherit;font-size:16px;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:7px 9px}
+.bgname{font-weight:700;width:100%}
+.bgdel{flex:none;width:38px;font:inherit;border:1px solid var(--line);background:transparent;color:var(--warn);border-radius:8px;cursor:pointer}
+.bgadd{width:100%;margin-top:6px;font:inherit;padding:8px;border:1px dashed var(--accent);background:transparent;color:var(--accent);border-radius:8px;cursor:pointer}
 </style>
 
 <div class="wrap">
@@ -145,7 +222,8 @@ main{flex:none;overflow:visible;padding:0 16px 20px}
 </header>
 <nav><div class="chips" id="chips" role="tablist" aria-label="選擇日期"></div></nav>
 <main id="main"></main></div>
-<div class="bar" id="bar"><button id="prev" type="button">‹ 上一天</button><span id="barlab"></span><button id="next" type="button">下一天 ›</button></div>
+<div class="dock" id="dock"><div class="bar" id="bar"><button id="prev" type="button">‹ 上一天</button><span id="barlab"></span><button id="next" type="button">下一天 ›</button></div>
+<div class="tabbar" id="tabbar" role="tablist" aria-label="分頁"><button type="button" data-pg="days"><i>📅</i><span>每日</span></button><button type="button" data-pg="bag"><i>🧳</i><span>行李</span></button><button type="button" data-pg="cost"><i>💰</i><span>費用</span></button><button type="button" data-pg="ref"><i>📋</i><span>參考</span></button><button type="button" data-pg="coupon"><i>🎟️</i><span>優惠券</span></button></div></div>
 </div>
 
 <div id="lb" hidden><button type="button" aria-label="關閉">關閉</button><img alt=""></div>
@@ -158,7 +236,7 @@ const HOTEL2='福岡索拉利亞西鐵飯店';
 const DAYS=[
 {d:'11/2',w:'一',title:'桃園 → 福岡 → 由布院',stay:'由布岳一望の宿 美星',items:[
  {t:'',k:'車',n:'租車提醒',ck:'r2-',d:['・台灣駕照加日文譯本','・租車資料表','・ETC 卡','・加油站']},
- {t:'04:45',k:'機',n:'桃機 T1 Check in'},
+ {t:'04:00',k:'機',n:'桃機 T1 Check in'},
  {t:'06:45–10:00',k:'機',n:'虎航 IT240',d:['訂位編號 B7ZZQZ','手提 10KG；加購託運 15KG']},
  {t:'10:30–11:30',k:'吃',n:'午餐'},
  {t:'12:00',k:'車',n:'租車 Budget',d:['訂單編號 00010823599','帶：國際駕照、資料表、日幣現金','領車：福岡機場國際線航廈','報到：國際機場第一航廈 1F，各租車公司電話服務台','電話 092-710-5922'],img:[['rental-counter','福岡機場國際線航廈：租車公司櫃檯位置（紅框）']]},
@@ -190,10 +268,9 @@ const DAYS=[
 {d:'11/4',w:'三',title:'大濠公園 → 天神 → 中洲',stay:HOTEL2,items:[
  {t:'08:00',k:'吃',n:'早餐',d:['自選 or LAWSON']},
  {t:'08:30–09:00',k:'吃',n:'FUK COFFEE Parks',d:['08:00–20:00，布丁、咖啡'],l:[map('a2BDWCBKSJoLfvKB6')]},
- {t:'09:00–10:30',k:'吃',n:'星巴克 福岡大濠公園店',nl:M+'3mRZX4Rzi6a6jV3x8',d:['07:00–21:00']},
- {t:'10:30–11:30',k:'逛',n:'福岡市美術館',d:['09:30–17:30'],l:[map('QpcfmSuK2EhBbKY4A')]},
- {t:'11:30–12:00',k:'逛',n:'大濠公園日本庭園 世解-sekai-',d:['展覽不同，時間近日待確認'],l:[map('eLaiw24ZB17KvoiT6')]},
- {t:'12:00–13:30',k:'吃',n:'&LOCALS 大濠公園',d:['09:00–18:30，早餐供應到 11:00','八女茶玉子燒三明治套餐','八女アンサンブリュー（八女抹茶、紅茶、焙茶組合）','伴手禮：Tawawa 米果'],l:[map('zfCr33KLnEHV9fiw7')]},
+ {t:'09:00–09:15',k:'吃',n:'星巴克 福岡大濠公園店',nl:M+'3mRZX4Rzi6a6jV3x8',d:['07:00–21:00']},
+ {t:'09:15–09:30',k:'逛',n:'福岡市美術館',d:['09:30–17:30'],l:[map('QpcfmSuK2EhBbKY4A')]},
+ {t:'10:00–11:00',k:'吃',n:'&LOCALS 大濠公園',d:['09:00–18:30，早餐供應到 11:00','八女茶玉子燒三明治套餐','八女アンサンブリュー（八女抹茶、紅茶、焙茶組合）','伴手禮：Tawawa 米果'],l:[map('zfCr33KLnEHV9fiw7')]},
  {t:'',k:'逛',n:'選品店 BIOTOP FUKUOKA',d:['10:00–19:00'],l:[map('LmSZckqBRu2HK7fz6')]},
  {t:'12:00',k:'吃',n:'午餐：鮭 炉端ノいとおかし',d:['Confirmation # 35RR4R'],l:[map('pn5313WcxNnrcgBGA')]},
  {t:'13:00–13:11',k:'車',n:'地鐵：七隅線 普通 博多',d:['六本松 → 櫛田神社前']},
@@ -313,27 +390,36 @@ const REF=[
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const link=(l,u)=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(l)}</a>`;
 const chips=document.getElementById('chips'), main=document.getElementById('main');
-const tabs=[...DAYS.map((x,i)=>({id:'d'+(i+1),top:x.d,bot:'週'+x.w})),{id:'cost',top:'費用',bot:'總表'},{id:'ref',top:'參考',bot:'清單'},{id:'coupon',top:'優惠券',bot:'折價'}];
-chips.innerHTML=tabs.map((t,i)=>`<button class="chip" role="tab" data-i="${i}" aria-selected="false"><b>${esc(t.top)}</b><small>${esc(t.bot)}</small></button>`).join('');
+const tabs=[...DAYS.map((x,i)=>({id:'d'+(i+1),top:x.d,bot:'週'+x.w})),{id:'bag',top:'行李',bot:''},{id:'cost',top:'費用',bot:''},{id:'ref',top:'參考',bot:''},{id:'coupon',top:'優惠券',bot:''}];
+chips.innerHTML=tabs.slice(0,DAYS.length).map((t,i)=>`<button class="chip" role="tab" data-i="${i}" aria-selected="false"><b>${esc(t.top)}</b>${t.bot?`<small>${esc(t.bot)}</small>`:''}</button>`).join('');
 
+const BAG=[['個人證件類',['護照','信用卡','現金']],
+ ['衣物類',['內衣/褲','上衣、背心','褲子、裙子','薄外套/襯衫','泳衣','襪子','鞋子','拖鞋']],
+ ['個人衛生用品類',['牙刷、牙線、牙膏','牙套','洗面乳','卸妝乳','梳子','衛生棉','洗髮精、護髮素、護髮油','保養品','化妝品','身體乳','防曬','止汗','隱形眼鏡','人工淚液','眼鏡','面膜','修足時間','鯊魚夾','電棒','香水']],
+ ['電子產品類',['轉接頭','手機','相機、電池(隨身行李)、相機充電器、記憶卡','耳機','行動電源(隨身行李)、行動電源充電器']],
+ ['其他類',['雨傘(託運)','帽子','圍巾','太陽眼鏡','加濕口罩、口罩','酒精濕紙巾','濕紙巾','衛生紙','涼感巾','暖暖包','購物袋','手機背袋','行李袋','壓縮袋、壓縮器']],
+ ['藥品類',['常用藥品(感冒藥、止痛藥、暈機藥、腸胃藥、皮膚藥)','長期處方簽','益生菌','維他命C','防蚊液','蚊子藥']]];
 const shots=a=>a?`<div class="shots">${a.map(([f,c])=>`<figure class="shot"><img src="${U('img/'+f+'.jpg')}" alt="${esc(c)}" loading="lazy"><figcaption>${esc(c)}</figcaption></figure>`).join('')}</div>`:'';
 let CHK={};try{CHK=JSON.parse(localStorage.getItem('kyushu-chk')||'{}')||{}}catch(e){}
 main.addEventListener('change',ev=>{const c=ev.target.closest('input[data-ck]');if(!c)return;CHK[c.dataset.ck]=c.checked;c.closest('label').classList.toggle('done',c.checked);try{localStorage.setItem('kyushu-chk',JSON.stringify(CHK))}catch(e){}});
 function row(it){
   const det=(it.d||[]).map((x,j)=>{if(!it.ck)return `<div class="detail">${esc(x)}</div>`;const k=it.ck+j,on=!!CHK[k];return `<label class="chk${on?' done':''}"><input type="checkbox" data-ck="${k}"${on?' checked':''}><span>${esc(x.replace(/^・/,''))}</span></label>`}).join('');
+  const detw=it.ck?`<div class="chkgrid">${det}</div>`:det;
   let nl=it.nl,ls=it.l;
   if(!nl&&ls&&ls[0][0]==='地圖'&&!it.keep){nl=ls[0][1];ls=ls.slice(1)}
   const links=ls&&ls.length?`<div class="links">${ls.map(([a,b])=>link(a,b)).join('')}</div>`:'';
-  return `<li class="row"><div class="time">${esc(it.t||'')}</div><div class="body"><div class="title"><span class="kind k-${esc(it.k)}">${esc(it.k)}</span><span>${nl?link(it.n,nl):esc(it.n)}</span></div>${det}${it.c?`<span class="cost">${esc(it.c)}</span>`:''}${links}${shots(it.img)}</div></li>`;
+  return `<li class="row"><div class="time">${esc(it.t||'')}</div><div class="body"><div class="title"><span class="kind k-${esc(it.k)}">${esc(it.k)}</span><span>${nl?link(it.n,nl):esc(it.n)}</span></div>${detw}${it.c?`<span class="cost">${esc(it.c)}</span>`:''}${links}${shots(it.img)}</div></li>`;
 }
 function show(i,scroll){
   [...chips.children].forEach((c,j)=>c.setAttribute('aria-selected',j===i));
   let h='';
   if(i<DAYS.length){
     const d=DAYS[i];
-    h=`<div class="dayhead"><div class="date">DAY ${i+1} · ${esc(d.d)}（週${esc(d.w)}）</div><h2>${esc(d.title)}</h2>${d.stay?`<span class="stay">住宿：${esc(d.stay)}</span>`:''}</div><section class="exp" id="exp" aria-label="本日費用"></section>${d.tips?`<div class="tips"><b>${esc(d.tips[0])}</b>　${esc(d.tips[1])}${shots(d.tips[2])}</div>`:''}<ol>${d.items.map(row).join('')}</ol>`;
+    h=`<div class="dayhead"><div class="date">DAY ${i+1} · ${esc(d.d)}（週${esc(d.w)}）</div><h2>${esc(d.title)}</h2>${d.stay?`<span class="stay">住宿：${esc(d.stay)}</span>`:''}</div>${d.tips?`<div class="tips"><b>${esc(d.tips[0])}</b>　${esc(d.tips[1])}${shots(d.tips[2])}</div>`:''}<ol>${d.items.map(row).join('')}</ol>`;
+  }else if(tabs[i].id==='bag'){
+    h=`<div class="dayhead bagtop"><div><h2>行李</h2><div class="date">去程虎航 IT240：手提 10KG；加購託運 15KG</div></div><button type="button" id="bag-reset" class="resetbtn">重設</button></div><div id="bagbox"></div>`;
   }else if(tabs[i].id==='cost'){
-    h=`<div class="dayhead"><h2>費用總表</h2></div><section class="ref" id="expsum"></section>`;
+    h=`<div class="dayhead"><h2>費用</h2></div><div id="expsum"></div>`;
   }else if(tabs[i].id==='ref'){
     h=`<div class="dayhead"><h2>參考</h2></div>`+REF.map(g=>`<section class="ref"><h3>${esc(g.h)}</h3>${shots(g.img)}<ol>${g.rows.map(r=>`<li class="row"><div class="body"><div class="title">${esc(r[0])}</div>${r[2]?`<div class="detail">${esc(r[2])}</div>`:''}${r[1]?`<div class="links">${link('開啟連結',r[1])}</div>`:''}</div></li>`).join('')}</ol></section>`).join('');
   }else{
@@ -349,23 +435,31 @@ function show(i,scroll){
      ['Alpen GROUP','https://app.likejapan.com/zh-hk/coupon/alpen-coupon','使用期限至 2026 年 12 月 31 日','img/logo-alpen.jpg'],
      ['AEON 超市','https://www.welcome-aeon.com/coupon/web_coupon.php?lang=zh-CHT&id=19&cid=cp1694597628&cv=1','使用期限至 2026 年 11 月 30 日','img/logo-aeon.jpg'],
      ['福岡機場免稅店','https://gogojp.tw/fukuoka-airport/','使用期限至 2027 年 3 月 31 日','img/logo-fukuokaairport.jpg']];
-    h=`<div class="dayhead"><h2>商店優惠券</h2></div>`+C.map(c=>`<section class="ref"><a class="brand" href="${esc(c[1])}" target="_blank" rel="noopener">${c[3]?`<img src="${U(c[3])}" alt="${esc(c[0])}">`:`<b class="mono">${esc(c[0])}</b>`}<span>${esc(c[0])}<small>${esc(c[2])}</small></span></a></section>`).join('');
+    h=`<div class="dayhead"><h2>優惠券</h2></div>`+C.map(c=>`<section class="ref"><a class="brand" href="${esc(c[1])}" target="_blank" rel="noopener">${c[3]?`<img src="${U(c[3])}" alt="${esc(c[0])}">`:`<b class="mono">${esc(c[0])}</b>`}<span>${esc(c[0])}<small>${esc(c[2])}</small></span></a></section>`).join('');
   }
   main.innerHTML=h;
   cur=i;editing=null;pendingDel=null;refresh();
-  document.getElementById('prev').disabled=i===0;document.getElementById('next').disabled=i===tabs.length-1;
-  document.getElementById('barlab').textContent=i<DAYS.length?'DAY '+(i+1)+' · '+DAYS[i].d:tabs[i].top;
-  chips.children[i].scrollIntoView({inline:'center',block:'nearest'});
-  document.getElementById('scroller').scrollTop=0;
+  document.getElementById('prev').disabled=i===0;
+  const isDay=i<DAYS.length;
+  document.getElementById('barlab').textContent=isDay?'DAY '+(i+1)+' · '+DAYS[i].d:'';
+  document.getElementById('bar').hidden=!isDay;document.querySelector('nav').hidden=!isDay;document.querySelector('header').hidden=!isDay;
+  document.getElementById('next').disabled=i>=DAYS.length-1;
+  if(isDay)lastDay=i;
+  [...document.querySelectorAll('#tabbar button')].forEach(b=>b.classList.toggle('on',b.dataset.pg===(isDay?'days':tabs[i].id)));
+  if(chips.children[i]){const c=chips.children[i];chips.scrollLeft=c.offsetLeft-(chips.clientWidth-c.offsetWidth)/2}
+  window.scrollTo(0,0);
   try{history.replaceState(null,'','#'+tabs[i].id)}catch(e){}
   try{localStorage.setItem('kyushu-tab',tabs[i].id)}catch(e){}
 }
+let lastDay=0;
 function go(i){if(i<0||i>=tabs.length)return;show(i,true)}
+document.getElementById('tabbar').addEventListener('click',e=>{const b=e.target.closest('button[data-pg]');if(!b)return;const pg=b.dataset.pg;go(pg==='days'?lastDay:tabs.findIndex(t=>t.id===pg))});
+main.addEventListener('click',e=>{const a=e.target.closest('[data-goto]');if(a){e.preventDefault();go(+a.dataset.goto)}});
 document.getElementById('prev').addEventListener('click',()=>go(cur-1));
-document.getElementById('next').addEventListener('click',()=>go(cur+1));
+document.getElementById('next').addEventListener('click',()=>{if(cur<DAYS.length-1)go(cur+1)});
 (()=>{let x=0,y=0,t=0,ok=false;
  main.addEventListener('touchstart',e=>{const q=e.touches[0];x=q.clientX;y=q.clientY;t=Date.now();ok=e.touches.length===1&&!e.target.closest('.sumwrap,input,select,textarea')},{passive:true});
- main.addEventListener('touchend',e=>{if(!ok)return;const q=e.changedTouches[0],dx=q.clientX-x,dy=q.clientY-y;if(Math.abs(dx)>70&&Math.abs(dy)<45&&Math.abs(dx)>Math.abs(dy)*2&&Date.now()-t<600)go(cur+(dx<0?1:-1))},{passive:true});
+ main.addEventListener('touchend',e=>{if(!ok)return;const q=e.changedTouches[0],dx=q.clientX-x,dy=q.clientY-y;if(Math.abs(dx)>70&&Math.abs(dy)<45&&Math.abs(dx)>Math.abs(dy)*2&&Date.now()-t<600){const n=cur+(dx<0?1:-1);if(cur<DAYS.length&&n>=0&&n<DAYS.length)go(n)}},{passive:true});
 })();
 const lb=document.getElementById('lb'),lbi=lb.querySelector('img');
 main.addEventListener('click',e=>{const im=e.target.closest('.shot img');if(im){lbi.src=im.src;lbi.alt=im.alt;lb.hidden=false}});
@@ -382,101 +476,158 @@ try{
   let saved=-1;try{saved=tabs.findIndex(t=>t.id===localStorage.getItem('kyushu-tab'))}catch(e){}
   start=hi>=0?hi:idx>=0?idx:Math.max(saved,0);
 }catch(e){}
-/* ---------- expenses ---------- */
-const J=(label,amt,note,twd)=>({label,cur:'JPY',amt,twd:twd||null,note:note||''});
-const T=(label,amt,note)=>({label,cur:'TWD',amt,twd:null,note:note||''});
-const EXP_SEED={
- d1:[T('機票（虎航去程＋長榮回程）',16063,'每人'),J('美星住宿',55362,'10/23 刷國泰',11728),J('美星晚餐升級',3300,'每人，兩人要一樣；現金或刷卡'),J('溫泉入湯稅',250,'每人 ¥250 或 ¥300，請依人數調整')],
- d2:[J('由布院停車場 A',500,'一回'),J('由布院美術館門票',3400,'10/28 刷國泰',721),J('福岡索拉利亞西鐵飯店',68056,'10/29 刷國泰'),J('還車 Budget',17743,'付現金')],
- d3:[J('晚餐：我逢人',33000,'每人；已訂位和付款，刷卡 NT$13,764，已給現金',13764)],
- d4:[J('刷國泰',118188,'10/31'),J('JR 九州福岡廣域版周遊券',3500,'成人 2 日券（Klook）；是否已含在上一筆請自行確認'),J('皿倉山纜車',1230,'來回門票')],
- d5:[J('還車 AVIS Budget',11853,'付現金')],
- d6:[],d7:[]
-};
-const clone=o=>JSON.parse(JSON.stringify(o));
-let EXP=clone(EXP_SEED),dbx=null,canWrite=true,editing=null,pendingDel=null,cur=0,syncMsg='';
-const dk=i=>'d'+(i+1);
-for(const k in EXP_SEED)EXP_SEED[k].forEach((e,n)=>{e.id='s'+k+n});EXP=clone(EXP_SEED);
-try{const st=JSON.parse(localStorage.getItem('kyushu-exp')||'null');if(st)for(const k in st)if(Array.isArray(st[k]))EXP[k]=st[k]}catch(e){}
-const fmt=n=>Number(n||0).toLocaleString('en-US');
-function totals(list){let jpy=0,twd=0,eq=0;for(const e of list){if(e.cur==='JPY'){jpy+=+e.amt||0;eq+=+e.twd||0}else twd+=+e.amt||0}return{jpy,twd,eq}}
-function totHtml(t){
-  const p=[];
-  if(t.jpy)p.push(`<span>日幣 <b>¥${fmt(t.jpy)}</b></span>`);
-  if(t.twd)p.push(`<span>台幣 <b>NT$${fmt(t.twd)}</b></span>`);
-  if(t.eq)p.push(`<span>日幣已填折合 <b>NT$${fmt(t.eq)}</b></span>`);
-  return p.length?p.join(''):'<span class="none">尚無費用</span>';
+/* ---------- bag ---------- */
+const BAG_TODO=['ESIM','Visit Japan Web','旅遊不便險','海外突發疾病險','IC卡儲值(ATM)','LUUP APP'];
+let BAGS=null,bagEdit=null,focusBag=null,bagT=0,bagP=Promise.resolve();
+const bid=()=>'b'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+function bagDefault(){
+  const g=[{name:'To Do List',todo:true,items:BAG_TODO.map((t,j)=>({id:'t'+j,t,done:false}))}];
+  BAG.forEach((x,gi)=>g.push({name:x[0],items:x[1].map((t,j)=>{let oj=j;if(x[0]==='藥品類'){if(j===2||j===3)oj=-1;else if(j>3)oj=j-2}return{id:'g'+gi+'-'+j,t,done:oj>=0&&!!CHK['bag2-'+gi+'-'+oj]}})}));
+  return g;
 }
-function persist(k){
-  try{localStorage.setItem('kyushu-exp',JSON.stringify(EXP))}catch(e){}
+try{const st=JSON.parse(localStorage.getItem('kyushu-bag3')||'null');if(Array.isArray(st))BAGS=st}catch(e){}
+if(!BAGS)BAGS=bagDefault();
+function saveBag(){
+  try{localStorage.setItem('kyushu-bag3',JSON.stringify(BAGS))}catch(e){}
+  clearTimeout(bagT);bagT=setTimeout(()=>{if(!dbx||!canWrite)return;const groups=JSON.parse(JSON.stringify(BAGS));bagP=bagP.then(()=>dbx.doc('bag/all').set({groups})).catch(()=>{})},600);
+}
+function renderBag(){
+  const box=document.getElementById('bagbox');if(!box)return;
+  const grp=(g,gi)=>{
+    const ed=bagEdit===gi;
+    const head=`<div class="bghead"><h3>${ed?`<input class="bgin bgname" data-bg="name" data-g="${gi}" value="${esc(g.name)}" autocomplete="off">`:esc(g.name)}</h3><button type="button" class="bgbtn" data-bact="${ed?'done':'edit'}" data-g="${gi}">${ed?'完成':'編輯'}</button></div>`;
+    const items=g.items.map(it=>ed
+      ?`<div class="bgrow"><input class="bgin" data-bg="text" data-g="${gi}" data-id="${esc(it.id)}" value="${esc(it.t)}" autocomplete="off"><button type="button" class="bgdel" data-bact="del" data-g="${gi}" data-id="${esc(it.id)}" aria-label="刪除">✕</button></div>`
+      :`<label class="chk${it.done?' done':''}"><input type="checkbox" data-bg="chk" data-g="${gi}" data-id="${esc(it.id)}"${it.done?' checked':''}><span>${esc(it.t)}</span></label>`).join('');
+    const add=ed?`<button type="button" class="bgadd" data-bact="add" data-g="${gi}">＋ 新增項目</button>`:'';
+    return `<section class="ref bgsec${g.todo?' todo':''}${ed?' editing':''}">${head}<div class="bgitems">${items}</div>${add}</section>`;
+  };
+  box.innerHTML=BAGS.map((g,gi)=>g.todo?grp(g,gi):'').join('')+'<div class="bagcols">'+BAGS.map((g,gi)=>g.todo?'':grp(g,gi)).join('')+'</div>';
+  if(focusBag){const f=box.querySelector('input[data-id="'+focusBag+'"]');focusBag=null;if(f)f.focus()}
+}
+function bagDone(){if(bagEdit===null)return;const g=BAGS[bagEdit];if(g)g.items=g.items.filter(x=>x.t.trim()!=='');bagEdit=null}
+main.addEventListener('change',e=>{const c=e.target.closest('input[data-bg="chk"]');if(!c)return;const g=BAGS[+c.dataset.g],it=g&&g.items.find(x=>x.id===c.dataset.id);if(!it)return;it.done=c.checked;c.closest('label').classList.toggle('done',c.checked);saveBag()});
+main.addEventListener('input',e=>{const t=e.target;if(!t.dataset||(t.dataset.bg!=='text'&&t.dataset.bg!=='name'))return;const g=BAGS[+t.dataset.g];if(!g)return;if(t.dataset.bg==='name')g.name=t.value;else{const it=g.items.find(x=>x.id===t.dataset.id);if(it)it.t=t.value}saveBag()});
+main.addEventListener('click',e=>{const b=e.target.closest('[data-bact]');if(!b)return;const a=b.dataset.bact,gi=+b.dataset.g,g=BAGS[gi];if(!g)return;
+  if(a==='edit'){bagDone();bagEdit=gi;renderBag()}
+  else if(a==='done'){bagDone();saveBag();renderBag()}
+  else if(a==='add'){const it={id:bid(),t:'',done:false};g.items.push(it);focusBag=it.id;saveBag();renderBag()}
+  else if(a==='del'){g.items=g.items.filter(x=>x.id!==b.dataset.id);saveBag();renderBag()}});
+let rsT=0;
+main.addEventListener('click',e=>{const r=e.target.closest('#bag-reset');if(!r)return;
+  if(r.dataset.sure){clearTimeout(rsT);BAGS.forEach(g=>g.items.forEach(it=>{it.done=false}));saveBag();renderBag();r.textContent='重設';delete r.dataset.sure;return}
+  r.dataset.sure='1';r.textContent='再按一次確定重設';clearTimeout(rsT);rsT=setTimeout(()=>{r.textContent='重設';delete r.dataset.sure},3000)});
+/* ---------- expenses ---------- */
+const RATE=0.20231;
+const I=(label,cur,amt,pay,note,date)=>({label,cur,amt,date:date||'',pay:pay||'',who:'',refund:false,note:note||''});
+const EXP_SEED=[
+ I('機票（虎航去程＋長榮回程）','TWD',16063,'','每人'),
+ I('美星住宿','JPY',55362,'刷卡','10/23 刷國泰','2026-10-23'),
+ I('美星晚餐升級','JPY',3300,'','每人，兩人要一樣；現金或刷卡'),
+ I('溫泉入湯稅','JPY',250,'','每人 ¥250 或 ¥300，請依人數調整'),
+ I('南山產物 旅平險','TWD',1385,'','2026/11/2 04:00-2026/11/9 04:00'),
+ I('由布院美術館門票','JPY',3400,'刷卡','10/28 刷國泰','2026-10-28'),
+ I('福岡索拉利亞西鐵飯店','JPY',68056,'刷卡','10/29 刷國泰','2026-10-29'),
+ I('還車 Budget','JPY',17743,'現金','付現金'),
+ I('晚餐：我逢人','JPY',33000,'','每人；已訂位和付款，刷卡 NT$13,764，已給現金'),
+ I('刷國泰','JPY',118188,'刷卡','10/31','2026-10-31'),
+ I('JR 九州福岡廣域版周遊券','JPY',3500,'','成人 2 日券（Klook）；是否已含在上一筆請自行確認'),
+ I('皿倉山纜車','JPY',1230,'','來回門票'),
+ I('還車 AVIS Budget','JPY',11853,'現金','付現金')];
+const clone=o=>JSON.parse(JSON.stringify(o));
+EXP_SEED.forEach((e,n)=>{e.id='s'+n});
+let EXP=clone(EXP_SEED),dbx=null,canWrite=true,editing=null,pendingDel=null,cur=0,syncMsg='';
+try{const st=JSON.parse(localStorage.getItem('kyushu-exp2')||'null');if(Array.isArray(st))EXP=st}catch(e){}
+const fmt=n=>Number(n||0).toLocaleString('en-US');
+const todayStr=()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+const isPub=e=>e.who==='公費';
+const hasTwd=e=>e.twd!==undefined&&e.twd!==null&&e.twd!==''&&isFinite(+e.twd);
+const tw=e=>isPub(e)?0:(e.cur==='JPY'?(hasTwd(e)?+e.twd:(+e.amt||0)*RATE):(+e.amt||0));
+const chain={};let chainP=Promise.resolve();let focusId=null,costFilter='all';const PRE_END='2026-11-02',keyFor=d=>!d?'none':d<PRE_END?'pre':d;
+function persist(){
+  try{localStorage.setItem('kyushu-exp2',JSON.stringify(EXP))}catch(e){}
   if(!dbx||!canWrite){syncMsg=dbx?'你目前是唯讀，修改只存在這台裝置':'只存在這台裝置';return}
-  const items=clone(EXP[k]);
-  chain[k]=(chain[k]||Promise.resolve()).then(()=>dbx.doc('expenses/'+k).set({items})).then(()=>{syncMsg='已同步';refreshSync()}).catch(err=>{
+  const items=clone(EXP);
+  chainP=chainP.then(()=>dbx.doc('expenses/all').set({items})).then(()=>{syncMsg='已同步';refreshSync()}).catch(err=>{
     if(err&&err.code==='invalid_argument')canWrite=false;
     syncMsg='未能同步到雲端，修改只存在這台裝置';refreshSync();
   });
 }
-const chain={};
 function refreshSync(){const el=document.getElementById('exp-sync');if(el)el.textContent=syncMsg}
-function renderExp(i){
-  const box=document.getElementById('exp');if(!box)return;
-  const list=EXP[dk(i)]||[];
-  const rows=list.map(e=>{
-    const amt=e.cur==='JPY'?'¥'+fmt(e.amt):'NT$'+fmt(e.amt);
-    const eq=e.cur==='JPY'&&e.twd?`<small>≈ NT$${fmt(e.twd)}</small>`:'';
-    const act=canWrite?`<div class="exp-act"><button type="button" data-act="edit" data-id="${esc(e.id)}">編輯</button><button type="button" class="danger" data-act="del" data-id="${esc(e.id)}">${pendingDel===e.id?'確定刪除':'刪除'}</button></div>`:'';
-    return `<li class="exp-row"><div class="exp-main"><div class="exp-label">${esc(e.label)}</div>${e.note?`<div class="exp-note">${esc(e.note)}</div>`:''}</div><div class="exp-amt">${amt}${eq}</div>${act}</li>`;
-  }).join('');
-  let form='';
-  if(editing!==null){
-    const e=editing==='new'?{label:'',cur:'JPY',amt:'',twd:'',note:''}:list.find(x=>x.id===editing)||{label:'',cur:'JPY',amt:'',twd:'',note:''};
-    form=`<form class="exp-form" id="exp-form" novalidate>
+const opt=(v,cur,l)=>`<option value="${esc(v)}"${v===cur?' selected':''}>${esc(l||v)}</option>`;
+function renderCost(){
+  const box=document.getElementById('expsum');if(!box)return;
+  const S=f=>Math.round(EXP.filter(f).reduce((a,e)=>a+tw(e),0));
+  const total=S(()=>true);
+  const own=EXP.filter(e=>!isPub(e)),pubs=EXP.filter(isPub);
+  const jpyL=own.filter(e=>e.cur==='JPY');
+  const jpy=jpyL.reduce((a,e)=>a+(+e.amt||0),0),jpyTw=Math.round(jpyL.reduce((a,e)=>a+tw(e),0));
+  const twdOnly=own.filter(e=>e.cur!=='JPY').reduce((a,e)=>a+(+e.amt||0),0);
+  const pubJ=pubs.filter(e=>e.cur==='JPY').reduce((a,e)=>a+(+e.amt||0),0),pubT=pubs.filter(e=>e.cur!=='JPY').reduce((a,e)=>a+(+e.amt||0),0);
+  const pubChip=`<span class="tchip"><small>公費</small><b>¥${fmt(pubJ)}${pubT?`＋NT$${fmt(pubT)}`:''}</b></span>`;
+  const chip=(l,v)=>`<span class="tchip"><small>${l}</small><b>NT$${fmt(v)}</b></span>`;
+  const sub=[chip('現金',S(e=>e.pay==='現金')),chip('刷卡',S(e=>e.pay==='刷卡')),pubChip,chip('Phoebe',S(e=>e.who==='Phoebe')),chip('Randy',S(e=>e.who==='Randy')),chip('退稅項目',S(e=>e.refund))];
+  const head=`<section class="tot"><small>總花費（自費，折合台幣）</small><div class="tot-main">NT$ ${fmt(total)}</div><div class="tot-line">日幣 ¥${fmt(jpy)} ≈ NT$${fmt(jpyTw)}　＋　台幣 NT$${fmt(twdOnly)}</div><div class="tot-chips">${sub.join('')}</div><div class="tot-rate">匯率 ¥1 = NT$${RATE}</div></section>`;
+  const formFor=e=>`<form class="exp-form" id="exp-form" novalidate>
       <label class="wide">項目<input id="exp-label" value="${esc(e.label)}" autocomplete="off"></label>
-      <label>幣別<select id="exp-cur"><option value="JPY"${e.cur==='JPY'?' selected':''}>日幣 ¥</option><option value="TWD"${e.cur==='TWD'?' selected':''}>台幣 NT$</option></select></label>
+      <label class="wide">日期（年/月/日）<input type="date" id="exp-date" value="${esc(e.date||'')}"></label>
+      <label>幣別<select id="exp-cur">${opt('JPY',e.cur,'¥ 日幣')}${opt('TWD',e.cur,'NT$ 台幣')}</select></label>
       <label>金額<input id="exp-amt" inputmode="decimal" value="${esc(e.amt)}" autocomplete="off"></label>
-      <label class="wide" id="exp-twd-wrap"${e.cur==='JPY'?'':' hidden'}>折合台幣（選填）<input id="exp-twd" inputmode="decimal" value="${esc(e.twd||'')}" autocomplete="off"></label>
+      <label class="wide" id="exp-twd-wrap"${e.cur==='JPY'?'':' hidden'}>折合台幣（選填，刷卡實際入帳金額；公費不需填）<input id="exp-twd" inputmode="decimal" value="${esc(hasTwd(e)?e.twd:'')}" autocomplete="off"></label>
+      <label>付款方式<select id="exp-pay">${opt('',e.pay,'未選')}${opt('現金',e.pay)}${opt('刷卡',e.pay)}</select></label>
+      <label>付款人<select id="exp-who">${opt('公費',e.who)}${opt('Phoebe',e.who)}${opt('Randy',e.who)}${opt('',e.who,'未選')}</select></label>
+      <label class="chk wide"><input type="checkbox" id="exp-refund"${e.refund?' checked':''}><span>退稅（勾選＝是，未勾＝否）</span></label>
       <label class="wide">備註<input id="exp-note" value="${esc(e.note)}" autocomplete="off"></label>
       <div class="exp-err" id="exp-err" hidden></div>
       <div class="btns"><button type="button" data-act="cancel">取消</button><button type="submit" class="primary">儲存</button></div></form>`;
-  }
+  const sorted=EXP.map((e,i)=>({e,i})).sort((x,y)=>{const a=x.e.date||'',b=y.e.date||'';if(a&&b&&a!==b)return a<b?-1:1;if(a&&!b)return -1;if(!a&&b)return 1;return x.i-y.i}).map(o=>o.e);
+  const dates=[...new Set(EXP.map(e=>e.date).filter(d=>d&&d>=PRE_END))].sort();const hasPre=EXP.some(e=>e.date&&e.date<PRE_END);
+  const hasNone=EXP.some(e=>!e.date);
+  if(costFilter!=='all'&&!(costFilter==='none'?hasNone:costFilter==='pre'?hasPre:dates.includes(costFilter)))costFilter='all';
+  const shown=costFilter==='all'?sorted:sorted.filter(e=>keyFor(e.date)===costFilter);
+  const dl=d=>d.slice(5).replace('-','/');
+  const stabs=[['all','全部']].concat(hasPre?[['pre','行前開銷']]:[]).concat(dates.map(d=>[d,dl(d)])).concat(hasNone?[['none','未填日期']]:[]);
+  const strip=`<div class="subtabs" role="tablist">${stabs.map(([v,l])=>`<button type="button" class="chip" role="tab" data-act="cf" data-v="${esc(v)}" aria-selected="${v===costFilter}"><b>${esc(l)}</b></button>`).join('')}</div>`;
+  const dayTot=costFilter==='all'?'':`<div class="daytot">${costFilter==='none'?'未填日期':costFilter==='pre'?'行前開銷':esc(costFilter.replace(/-/g,'/'))} 合計　<b>NT$${fmt(Math.round(shown.reduce((a,e)=>a+tw(e),0)))}</b>${(()=>{const pj=shown.filter(e=>isPub(e)&&e.cur==='JPY').reduce((a,e)=>a+(+e.amt||0),0);return pj?`　公費 <b>¥${fmt(pj)}</b>`:''})()}</div>`;
+  const rows=shown.map(e=>{
+    if(editing===e.id)return `<li class="exp-row editing" data-id="${esc(e.id)}">${formFor(e)}</li>`;
+    const amt=e.cur==='JPY'?`¥${fmt(e.amt)}<small>${isPub(e)?'公費':`≈ NT$${fmt(Math.round(tw(e)))}${hasTwd(e)?'（實際）':''}`}</small>`:'NT$'+fmt(e.amt)+(isPub(e)?'<small>公費</small>':'');
+    const meta=[e.date?e.date.replace(/-/g,'/'):'',e.pay,e.who,e.refund?'退稅：是':''].filter(Boolean).map(x=>`<span class="mtag">${esc(x)}</span>`).join('');
+    const act=canWrite?`<div class="exp-act"><button type="button" data-act="edit" data-id="${esc(e.id)}">編輯</button><button type="button" class="danger" data-act="del" data-id="${esc(e.id)}">${pendingDel===e.id?'確定刪除':'刪除'}</button></div>`:'';
+    return `<li class="exp-row" data-id="${esc(e.id)}"><div class="exp-main"><div class="exp-label">${esc(e.label)}</div>${meta?`<div class="mtags">${meta}</div>`:''}${e.note?`<div class="exp-note">${esc(e.note)}</div>`:''}</div><div class="exp-amt">${amt}</div>${act}</li>`;
+  }).join('');
+  const form=editing==='new'?formFor({label:'',cur:'JPY',amt:'',date:(costFilter!=='all'&&costFilter!=='none'&&costFilter!=='pre'?costFilter:todayStr()),pay:'',who:'',refund:false,note:''}):'';
   const add=canWrite&&editing===null?`<button type="button" class="primary exp-add" data-act="add">＋ 新增費用</button>`:'';
-  box.innerHTML=`<div class="exp-head"><h3>本日費用</h3><div class="exp-tot">${totHtml(totals(list))}</div></div>${rows?`<ul class="exp-list">${rows}</ul>`:''}${form}${add}<div class="exp-sync" id="exp-sync">${esc(syncMsg||(canWrite?'':'唯讀'))}</div>`;
-  if(editing!==null){const f=document.getElementById('exp-label');if(f&&editing==='new')f.focus()}
+  box.innerHTML=head+strip+`<section class="ref expbox">${add}${form}${dayTot}${rows?`<ul class="exp-list">${rows}</ul>`:'<div class="exp-note">尚無費用</div>'}<div class="exp-sync" id="exp-sync">${esc(syncMsg||(canWrite?'':'唯讀'))}</div></section>`;
+  if(focusId){const t=editing!==null&&focusId===editing?document.getElementById('exp-form'):box.querySelector('.exp-row[data-id="'+focusId+'"]');focusId=null;if(t)t.scrollIntoView({block:'center'})}
+  if(editing==='new'){const f=document.getElementById('exp-label');if(f)f.focus({preventScroll:true})}
 }
-function renderSum(){
-  const box=document.getElementById('expsum');if(!box)return;
-  let all={jpy:0,twd:0,eq:0};
-  const rows=DAYS.map((d,i)=>{const t=totals(EXP[dk(i)]||[]);all.jpy+=t.jpy;all.twd+=t.twd;all.eq+=t.eq;
-    return `<tr><td>${esc(d.d)}（週${esc(d.w)}）</td><td>${t.jpy?'¥'+fmt(t.jpy):'–'}</td><td>${t.twd?'NT$'+fmt(t.twd):'–'}</td><td>${t.eq?'NT$'+fmt(t.eq):'–'}</td></tr>`}).join('');
-  box.innerHTML=`<h3>費用總表</h3><div class="sumwrap"><table class="sum"><thead><tr><th>日期</th><th>日幣</th><th>台幣</th><th>日幣已填折合</th></tr></thead><tbody>${rows}</tbody><tfoot><tr><td>全程</td><td>¥${fmt(all.jpy)}</td><td>NT$${fmt(all.twd)}</td><td>NT$${fmt(all.eq)}</td></tr></tfoot></table></div><p class="detail" style="margin:6px 0 10px">各天費用在該天行程最上方編輯。</p>`+DAYS.map((d,i)=>{const L=EXP[dk(i)]||[],t=totals(L);const tt=(t.jpy?'¥'+fmt(t.jpy):'')+(t.jpy&&t.twd?' + ':'')+(t.twd?'NT$'+fmt(t.twd):'');return `<div class="csec"><h4><span>${esc(d.d)}（週${esc(d.w)}）</span><span>${tt||'–'}</span></h4>${L.length?L.map(e=>`<div class="cl"><span>${esc(e.label)}${e.note?`<small>${esc(e.note)}</small>`:''}</span><em>${e.cur==='JPY'?'¥'+fmt(e.amt)+(e.twd!=null?` ≈ NT$${fmt(e.twd)}`:''):'NT$'+fmt(e.amt)}</em></div>`).join(''):'<div class="cl"><span>無費用</span></div>'}</div>`}).join('');
-}
-function refresh(){if(cur<DAYS.length)renderExp(cur);else renderSum()}
+function refresh(){renderCost();renderBag()}
 main.addEventListener('click',ev=>{
-  const b=ev.target.closest('[data-act]');if(!b||!document.getElementById('exp'))return;
-  const a=b.dataset.act,k=dk(cur);
-  if(a==='add'){editing='new';pendingDel=null;renderExp(cur)}
-  else if(a==='edit'){editing=b.dataset.id;pendingDel=null;renderExp(cur)}
-  else if(a==='cancel'){editing=null;renderExp(cur)}
+  const b=ev.target.closest('[data-act]');if(!b||!document.getElementById('expsum'))return;
+  const a=b.dataset.act;
+  if(a==='add'){editing='new';pendingDel=null;renderCost()}
+  else if(a==='edit'){editing=b.dataset.id;focusId=editing;pendingDel=null;renderCost()}
+  else if(a==='cancel'){editing=null;renderCost()}
+  else if(a==='cf'){costFilter=b.dataset.v;editing=null;pendingDel=null;renderCost()}
   else if(a==='del'){
-    if(pendingDel===b.dataset.id){EXP[k]=(EXP[k]||[]).filter(x=>x.id!==pendingDel);pendingDel=null;persist(k);renderExp(cur)}
-    else{pendingDel=b.dataset.id;renderExp(cur)}
+    if(pendingDel===b.dataset.id){EXP=EXP.filter(x=>x.id!==pendingDel);pendingDel=null;persist();renderCost()}
+    else{pendingDel=b.dataset.id;renderCost()}
   }
 });
-main.addEventListener('change',ev=>{
-  if(ev.target.id==='exp-cur'){const w=document.getElementById('exp-twd-wrap');if(w)w.hidden=ev.target.value!=='JPY'}
-});
+main.addEventListener('change',ev=>{if(ev.target.id==='exp-cur'){const w=document.getElementById('exp-twd-wrap');if(w)w.hidden=ev.target.value!=='JPY'}});
 main.addEventListener('submit',ev=>{
   if(ev.target.id!=='exp-form')return;
   ev.preventDefault();
-  const k=dk(cur),g=id=>document.getElementById(id).value.trim();
-  const label=g('exp-label'),curr=g('exp-cur'),amt=parseFloat(g('exp-amt').replace(/,/g,'')),twdRaw=g('exp-twd').replace(/,/g,''),note=g('exp-note');
+  const g=id=>document.getElementById(id).value.trim();
+  const label=g('exp-label'),curr=g('exp-cur'),amt=parseFloat(g('exp-amt').replace(/,/g,'')),date=g('exp-date'),pay=g('exp-pay'),who=g('exp-who'),refund=document.getElementById('exp-refund').checked,note=g('exp-note'),twdRaw=g('exp-twd').replace(/,/g,'');
+  const twd=curr==='JPY'&&twdRaw!==''&&isFinite(parseFloat(twdRaw))?parseFloat(twdRaw):null;
   const err=document.getElementById('exp-err');
   if(!label||!isFinite(amt)||amt<0){err.textContent='請填項目名稱和正確的金額。';err.hidden=false;return}
-  const twd=curr==='JPY'&&twdRaw!==''&&isFinite(parseFloat(twdRaw))?parseFloat(twdRaw):null;
-  const list=EXP[k]=EXP[k]||[];
-  if(editing==='new')list.push({id:'e'+Date.now().toString(36)+Math.random().toString(36).slice(2,5),label,cur:curr,amt,twd,note});
-  else{const e=list.find(x=>x.id===editing);if(e)Object.assign(e,{label,cur:curr,amt,twd,note})}
-  editing=null;persist(k);renderExp(cur);
+  if(editing==='new'){const nid='e'+Date.now().toString(36)+Math.random().toString(36).slice(2,5);EXP.push({id:nid,label,cur:curr,amt,twd,date,pay,who,refund,note});focusId=nid}
+  else{const e=EXP.find(x=>x.id===editing);if(e){Object.assign(e,{label,cur:curr,amt,twd,date,pay,who,refund,note});focusId=e.id}}
+  if(costFilter!=='all')costFilter=keyFor(date);
+  editing=null;persist();renderCost();
 });
 (async()=>{try{
   if(!window.claude||!claude.use)return;
@@ -484,8 +635,12 @@ main.addEventListener('submit',ev=>{
   dbx=db;
   try{const u=await claude.use('user');if(u&&u.can('data.write')===false)canWrite=false}catch(e){}
   db.collection('expenses').onSnapshot(snap=>{
-    snap.docs.forEach(d=>{const v=d.data();if(v&&Array.isArray(v.items))EXP[d.id]=v.items});
-    if(editing===null&&pendingDel===null)refresh();
+    snap.docs.forEach(d=>{if(d.id!=='all')return;const v=d.data();if(v&&Array.isArray(v.items)){EXP=clone(v.items);try{localStorage.setItem('kyushu-exp2',JSON.stringify(EXP))}catch(e){}}});
+    if(editing===null&&pendingDel===null)renderCost();
+  },()=>{});
+  db.collection('bag').onSnapshot(snap=>{
+    snap.docs.forEach(d=>{if(d.id!=='all')return;const v=d.data();if(v&&Array.isArray(v.groups)){BAGS=JSON.parse(JSON.stringify(v.groups));try{localStorage.setItem('kyushu-bag3',JSON.stringify(BAGS))}catch(e){}}});
+    if(bagEdit===null)renderBag();
   },()=>{});
 }catch(e){}})();
 show(start,false);
